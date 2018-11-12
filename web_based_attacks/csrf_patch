@@ -1,0 +1,518 @@
+diff --git a/AdminBooks.jsp b/AdminBooks.jsp
+index 492f33f..7061518 100755
+--- a/AdminBooks.jsp
++++ b/AdminBooks.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "AdminBooks.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -348,4 +351,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/AdminMenu.jsp b/AdminMenu.jsp
+index 2b703ac..450125d 100755
+--- a/AdminMenu.jsp
++++ b/AdminMenu.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "AdminMenu.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -93,4 +96,4 @@ if ( conn != null ) conn.close();
+     }
+     catch (Exception e) { out.println(e.toString()); }
+   }
+-%>
+\ No newline at end of file
++%>
+diff --git a/BookDetail.jsp b/BookDetail.jsp
+index 7447670..f9f3ddc 100755
+--- a/BookDetail.jsp
++++ b/BookDetail.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "BookDetail.jsp";
+ 
+ String cSec = checkSecurity(1, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -804,4 +807,4 @@ if (fldrating_view.equals("0"))
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/BookMaint.jsp b/BookMaint.jsp
+index 535be34..fec19c3 100755
+--- a/BookMaint.jsp
++++ b/BookMaint.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "BookMaint.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -420,4 +423,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/Books.jsp b/Books.jsp
+index 3c4643c..05473c0 100755
+--- a/Books.jsp
++++ b/Books.jsp
+@@ -9,6 +9,9 @@ static final String sFileName = "Books.jsp";
+ 
+ %><%
+ 
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+diff --git a/CardTypesGrid.jsp b/CardTypesGrid.jsp
+index 9a678fb..bc48cc0 100755
+--- a/CardTypesGrid.jsp
++++ b/CardTypesGrid.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "CardTypesGrid.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -192,4 +195,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/CardTypesRecord.jsp b/CardTypesRecord.jsp
+index 74326bf..e077d93 100755
+--- a/CardTypesRecord.jsp
++++ b/CardTypesRecord.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "CardTypesRecord.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -293,4 +296,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/CategoriesGrid.jsp b/CategoriesGrid.jsp
+index c67793b..823713d 100755
+--- a/CategoriesGrid.jsp
++++ b/CategoriesGrid.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "CategoriesGrid.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -238,4 +241,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/CategoriesRecord.jsp b/CategoriesRecord.jsp
+index eeaed54..2249742 100755
+--- a/CategoriesRecord.jsp
++++ b/CategoriesRecord.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "CategoriesRecord.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -293,4 +296,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/Common.jsp b/Common.jsp
+index 4b2834f..7ef8e4d 100755
+--- a/Common.jsp
++++ b/Common.jsp
+@@ -400,4 +400,16 @@
+     return "";
+   }
+ 
++  String check_ref_header (javax.servlet.http.HttpServletRequest request) {
++     try {
++       String referer = request.getHeader("referer");
++       if (referer == null)
++          return "sendRedirect";
++       if (referer.contains("http://127.0.0.1:8080/") || referer.contains("localhost:8080"))
++          return "";
++     }
++     catch(Exception e){};
++     return "";
++  }
++
+ %>
+diff --git a/Default.jsp b/Default.jsp
+index 6d20570..5b5c084 100755
+--- a/Default.jsp
++++ b/Default.jsp
+@@ -9,6 +9,9 @@ static final String sFileName = "Default.jsp";
+               
+ %><%
+ 
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -775,4 +778,4 @@ flditem_id="<img border=0 src=" + flditem_id + ">";
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/EditorialCatGrid.jsp b/EditorialCatGrid.jsp
+index ab3c768..1f39f9e 100755
+--- a/EditorialCatGrid.jsp
++++ b/EditorialCatGrid.jsp
+@@ -11,6 +11,9 @@ static final String sFileName = "EditorialCatGrid.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+                 
+ boolean bDebug = false;
+ 
+@@ -239,4 +242,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/EditorialCatRecord.jsp b/EditorialCatRecord.jsp
+index 706dd2e..85e14c4 100755
+--- a/EditorialCatRecord.jsp
++++ b/EditorialCatRecord.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "EditorialCatRecord.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -290,4 +293,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/EditorialsGrid.jsp b/EditorialsGrid.jsp
+index bad4f30..12933da 100755
+--- a/EditorialsGrid.jsp
++++ b/EditorialsGrid.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "EditorialsGrid.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -254,4 +257,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/EditorialsRecord.jsp b/EditorialsRecord.jsp
+index 3e2f1b4..4fa6700 100755
+--- a/EditorialsRecord.jsp
++++ b/EditorialsRecord.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "EditorialsRecord.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -340,4 +343,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/Login.jsp b/Login.jsp
+index f26c5ed..160a461 100755
+--- a/Login.jsp
++++ b/Login.jsp
+@@ -9,6 +9,8 @@ static final String sFileName = "Login.jsp";
+               
+ %><%
+ 
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -171,4 +173,4 @@ if ( conn != null ) conn.close();
+     }
+     catch (Exception e) { out.println(e.toString()); }
+   }
+-%>
+\ No newline at end of file
++%>
+diff --git a/MembersGrid.jsp b/MembersGrid.jsp
+index 6a331bb..e6e3a00 100755
+--- a/MembersGrid.jsp
++++ b/MembersGrid.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "MembersGrid.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -309,4 +312,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/MembersInfo.jsp b/MembersInfo.jsp
+index ef14656..21aba09 100755
+--- a/MembersInfo.jsp
++++ b/MembersInfo.jsp
+@@ -12,6 +12,9 @@ static final String sFileName = "MembersInfo.jsp";
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+                 
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -446,4 +449,4 @@ if ( conn != null ) conn.close();
+   }
+   catch (Exception e) { out.println(e.toString()); }
+ }
+-%>
+\ No newline at end of file
++%>
+diff --git a/MembersRecord.jsp b/MembersRecord.jsp
+index f0c286b..df1e3a7 100755
+--- a/MembersRecord.jsp
++++ b/MembersRecord.jsp
+@@ -11,7 +11,11 @@ static final String sFileName = "MembersRecord.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -476,4 +480,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/MyInfo.jsp b/MyInfo.jsp
+index 56adf95..1567176 100755
+--- a/MyInfo.jsp
++++ b/MyInfo.jsp
+@@ -12,6 +12,9 @@ static final String sFileName = "MyInfo.jsp";
+ String cSec = checkSecurity(1, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+ 
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+diff --git a/OrdersGrid.jsp b/OrdersGrid.jsp
+index 92fa0ba..abcfea9 100755
+--- a/OrdersGrid.jsp
++++ b/OrdersGrid.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "OrdersGrid.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+diff --git a/OrdersRecord.jsp b/OrdersRecord.jsp
+index 3ff3221..c60d0ef 100755
+--- a/OrdersRecord.jsp
++++ b/OrdersRecord.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "OrdersRecord.jsp";
+ 
+ String cSec = checkSecurity(2, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -358,4 +361,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/Registration.jsp b/Registration.jsp
+index 2911c98..b22272d 100755
+--- a/Registration.jsp
++++ b/Registration.jsp
+@@ -8,6 +8,8 @@
+ static final String sFileName = "Registration.jsp";
+               
+ %><%
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
+ 
+ boolean bDebug = false;
+ 
+diff --git a/ShoppingCart.jsp b/ShoppingCart.jsp
+index 1c96701..b06437d 100755
+--- a/ShoppingCart.jsp
++++ b/ShoppingCart.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "ShoppingCart.jsp";
+ 
+ String cSec = checkSecurity(1, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -514,4 +517,4 @@ boolean bReq = true;
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/ShoppingCartRecord.jsp b/ShoppingCartRecord.jsp
+index 7c061b3..202f3f6 100755
+--- a/ShoppingCartRecord.jsp
++++ b/ShoppingCartRecord.jsp
+@@ -11,7 +11,10 @@ static final String sFileName = "ShoppingCartRecord.jsp";
+ 
+ String cSec = checkSecurity(1, session, response, request);
+ if ("sendRedirect".equals(cSec) ) return;
+-                
++
++String check_hdr = check_ref_header(request);
++  if ("sendRedirect".equals(check_hdr) ) return;
++ 
+ boolean bDebug = false;
+ 
+ String sAction = getParam( request, "FormAction");
+@@ -320,4 +323,4 @@ if ( conn != null ) conn.close();
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>

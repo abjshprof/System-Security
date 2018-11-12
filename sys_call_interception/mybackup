@@ -1,0 +1,31 @@
+#!/bin/bash
+if [ $# -eq 0 ]
+  then
+    #echo "No arguments supplied"
+    exit 1
+fi
+mkdir -p ~/backup
+base_comp=$(basename $1)
+if [[ -d $1 ]]; then
+    #echo "$1 is a directory"
+    if [[ -d ~/backup/${base_comp} ]]; then
+	exit 
+	#echo "Dir $1 already present"
+    else
+	#echo "Copying dir $1"
+	cp -r $1 ~/backup/
+    fi
+    
+elif [[ -f $1 ]]; then
+    #echo "$1 is a file"
+    if [[ -f ~/backup/${base_comp} ]]; then
+	exit 
+       #echo "File $1 already present"
+    else
+       #echo "Copying file $1"
+       cp $1 ~/backup/
+    fi 
+else
+    #echo "$1 is not valid"
+    exit 1
+fi

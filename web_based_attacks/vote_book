@@ -1,0 +1,26 @@
+04:32:01.866807 IP localhost.37992 > localhost.http-alt: Flags [P.], seq 2178107971:2178108500, ack 1205311404, win 342, options [nop,nop,TS val 29239308 ecr 29239304], length 529
+E..EbG@.@..i.........h....JCG......V.:.....
+..(...(.GET /bookstore/BookDetail.jsp?rating=5&FormName=Rating&FormAction=update&item_id=1&rating_count=4&Trn_item_id=1&PK_item_id=1 HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://127.0.0.1:8080/bookstore/BookDetail.jsp?item_id=1
+Cookie: JSESSIONID=AFE92DE3CF21BF9CAC0775DF9CC4CD70
+Connection: keep-alive
+
+
+04:32:01.905808 IP localhost.37992 > localhost.http-alt: Flags [P.], seq 529:973, ack 186, win 350, options [nop,nop,TS val 29239318 ecr 29239312], length 444
+E...bI@.@............h....LTG..e...^.......
+..(...(.GET /bookstore/BookDetail.jsp?item_id=1 HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://127.0.0.1:8080/bookstore/BookDetail.jsp?item_id=1
+Cookie: JSESSIONID=AFE92DE3CF21BF9CAC0775DF9CC4CD70
+Connection: keep-alive
+
+

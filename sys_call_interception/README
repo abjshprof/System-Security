@@ -1,0 +1,19 @@
+Transparent Application Functionality Extension:
+an extension that automatically creates backup copies of files before they are overwritten. detects any attempt to overwrite an existing
+file, e.g., opening a file for write access, opening a file with truncate flags, truncating a file, renaming a file,
+etc. In all of those cases, the extension copies the existing file into a backup directory, say, .backup within the user's home directory.
+
+
+
+
+Instructions for usage:
+
+cp ./mybackup ~/
+make (will build libbackup.so)
+export LD_PRELOAD=<path to libbackup.so>
+
+Backup folder is in ~/bakckup
+
+NOTE:
+For some reason, some of my backups are created as .xyz
+Please check using ls -a during your tests

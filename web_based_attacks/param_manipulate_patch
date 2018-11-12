@@ -1,0 +1,87 @@
+diff --git a/BookDetail.jsp b/BookDetail.jsp
+index 7447670..38542f8 100755
+--- a/BookDetail.jsp
++++ b/BookDetail.jsp
+@@ -376,6 +376,9 @@ fldproduct_url="Review this book on Amazon.com";
+         if ( ! isNumber(fldquantity)) {
+           sOrderErr = sOrderErr + "The value in field Quantity is incorrect.<br>";
+         }
++        if ( isNumber(fldquantity) && (Integer.parseInt(fldquantity)) <=0 ) {
++	   sOrderErr = sOrderErr + "The value in field Quantity must be greater than 0.<br>";
++	}
+         if ( ! isNumber(flditem_id)) {
+           sOrderErr = sOrderErr + "The value in field item_id is incorrect.<br>";
+         }
+@@ -804,4 +807,4 @@ if (fldrating_view.equals("0"))
+ 
+     }
+     catch (Exception e) { out.println(e.toString()); }
+-  } %>
+\ No newline at end of file
++  } %>
+diff --git a/MyInfo.jsp b/MyInfo.jsp
+index 56adf95..7a99bbc 100755
+--- a/MyInfo.jsp
++++ b/MyInfo.jsp
+@@ -118,6 +118,7 @@ if ( conn != null ) conn.close();
+ 
+       String fldUserID="";
+       String fldmember_password="";
++      String fldold_member_password="";
+       String fldname="";
+       String fldlast_name="";
+       String fldemail="";
+@@ -127,11 +128,13 @@ if ( conn != null ) conn.close();
+       String fldcard_type_id="";
+       String fldcard_number="";
+       String fldmember_id="";
++      String old_pwd = "";
+ 
+       // Load all form fields into variables
+ 
+       fldUserID = (String) session.getAttribute("UserID");
+       fldmember_password = getParam(request, "member_password");
++      fldold_member_password = getParam(request, "old_member_password");
+       fldname = getParam(request, "name");
+       fldlast_name = getParam(request, "last_name");
+       fldemail = getParam(request, "email");
+@@ -145,6 +148,9 @@ if ( conn != null ) conn.close();
+         if ( isEmpty(fldmember_password) ) {
+           sFormErr = sFormErr + "The value in field Password* is required.<br>";
+         }
++        if ( isEmpty(fldold_member_password) ) {
++          sFormErr = sFormErr + "The value in field Old Password* is required.<br>";
++        }
+         if ( isEmpty(fldname) ) {
+           sFormErr = sFormErr + "The value in field First Name* is required.<br>";
+         }
+@@ -162,6 +168,17 @@ if ( conn != null ) conn.close();
+         }
+       }
+ 
++      sSQL = "select * from members where " + sWhere;
++      
++      java.sql.ResultSet rs = openrs( stat, sSQL);
++      rs.next();
++      old_pwd =  rs.getString("member_password");
++      rs.close();
++      if (!(old_pwd.equals(fldold_member_password))) {
++	    sFormErr = sFormErr + "Passwords don't match.<br>";
++            return (sFormErr);
++      }
++       
+ 
+       sSQL = "";
+       // Create SQL statement
+@@ -337,6 +354,11 @@ if ( conn != null ) conn.close();
+ 
+       out.println("</td>\n     </tr>");
+ 
++
++      out.print("     <tr>\n      <td style=\"background-color: #FFEAC5; border-style: inset; border-width: 0\"><font style=\"font-size: 10pt; color: #000000\">Old Password*</font></td><td style=\"background-color: #FFFFFF; border-width: 1\">"); out.print("<input type=\"password\"  name=\"old_member_password\" maxlength=\"20\" value=\""+toHTML(fldmember_password)+"\" size=\"20\">");
++
++      out.println("</td>\n     </tr>");
++
+       out.print("     <tr>\n      <td style=\"background-color: #FFEAC5; border-style: inset; border-width: 0\"><font style=\"font-size: 10pt; color: #000000\">First Name*</font></td><td style=\"background-color: #FFFFFF; border-width: 1\">"); out.print("<input type=\"text\"  name=\"name\" maxlength=\"50\" value=\""+toHTML(fldname)+"\" size=\"50\">");
+ 
+       out.println("</td>\n     </tr>");

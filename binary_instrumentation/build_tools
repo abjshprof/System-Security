@@ -1,0 +1,29 @@
+set +x
+rm -rf obj-ia32
+rm -f *.out
+mkdir -p obj-ia32
+TOOL=sec_app1_stack.so
+#PIN_DIR=/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+printf "src ${TOOL}  cmd: make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32 \n"
+make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32
+
+TOOL=warmup1_bb.so
+#PIN_DIR=/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+printf "src ${TOOL}  cmd: make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32 \n"
+make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32
+
+TOOL=warmup2_malloc.so
+#PIN_DIR=/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+printf "src ${TOOL}  cmd: make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32 \n"
+make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32
+
+
+TOOL=warmup3_ct.so
+#PIN_DIR=/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+printf "src ${TOOL}  cmd: make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32 \n"
+make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32
+
+TOOL=sec_app_spivot.so
+#PIN_DIR=/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+printf "src ${TOOL}  cmd: make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32 \n"
+make PIN_ROOT=${PIN_DIR} obj-ia32/${TOOL} TARGET=ia32

@@ -1,0 +1,12 @@
+142a143
+> 	create_backup(old);
+147a149
+> 	create_backup(__old);
+153a156
+> 	create_backup(path);
+158a162
+> 	create_backup(filename);
+163a168
+> 	create_backup(pathname);
+168a174
+> 	create_backup(filename);

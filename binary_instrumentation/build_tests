@@ -1,0 +1,3 @@
+rm -f malloc_test rec_sum
+gcc rec_sum.c -o rec_sum
+gcc malloc_test.c -o malloc_test

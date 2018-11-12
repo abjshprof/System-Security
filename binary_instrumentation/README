@@ -1,0 +1,93 @@
+Implemented: 
+All except shadow stack
+
+Prerequisites:
+I have tested my setup on VM supplied in assignment 1 with 32-bit Linux.
+Ubuntu 16.04.2 LTS \n \l
+Linux ubuntu 4.13.0-37-generic #42~16.04.1-Ubuntu SMP Wed Mar 7 16:02:25 UTC 2018 i686 i686 i686 GNU/Linux
+
+	Setup:
+1. Install PIN-3.6
+
+2. export PIN_DIR=path_to_pin_src
+For e.g:
+export PIN_DIR=/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+
+3. add PATH to pin in your ~/.bashrc
+For e.g:
+export PATH=$PATH:/home/sekar/workspace/hw4/pin-3.6-97554-g31f0a167d-gcc-linux/
+
+
+	Build:
+
+1. To build all tools:
+	./build_tools
+This will build warmup1_bb.so  warmup2_malloc.so sec_app1_stack.so under obj-ia32/
+
+2. To build all tests:
+	./build_tests
+This will build malloc_test rec_sum test programs
+
+
+		Run and Test
+
+How to test each tool:
+
+
+1. warmup1_bb.so : This counts the number of basic blocks in a program.
+	pin -t obj-ia32/warmup1_bb.so -- <application>
+
+- Output is available in warmup1_bb.out
+- Signal handling is also done
+
+
+
+2. warmup2_malloc.so : This counts the number of malloc calls and the total size malloced from all threads.
+	pin -t obj-ia32/warmup2_malloc.so -- <application>
+
+- It is multi-threaded safe.
+- Output is available in warmup2_malloc.out.
+- Signal handling is also done
+
+To run with my test program:
+	pin -t obj-ia32/warmup2_malloc.so -- ./malloc_test <number of mallocs>
+	My test program takes the number of calls to make to malloc as an argument.
+
+LIMITATIONS:
+	In my tests, the total memory calculated by this pintool is off by 1279 bytes.
+
+
+
+
+3. warmup3_ct.so : This counts the number of direct and indirect branches ececuted from all threads.
+	pin -t ./obj-ia32/warmup3_ct.so -- <application>
+
+To run with my test program:
+	pin -t obj-ia32/sec_app1_stack.so -- ./rec_sum <sum_upto>
+	My test program takes the number to which the sum is calculated and calculates it recursively. 
+	Since the program makes progressively larger number of recursive calls, both the number of 
+	direct and indirect branches increase
+
+- It is multi-threaded safe.
+- Output is available in warmup3_ct.out.
+- Signal handling is also done
+
+
+
+4. sec_app1_stack.so: This shows the maximum *total* stack used by all threads of the program.
+	pin -t obj-ia32/sec_app1_stack.so -- <application>
+
+- It is multi-threaded safe.
+- Output is available on sec_app1_stack.out.
+- Signal handling is also done
+
+To run with my test program:
+	pin -t obj-ia32/sec_app1_stack.so -- ./rec_sum <sum_upto>
+	My test program takes the number to which the sum is calculated and calculates it recursively.
+
+
+
+5. sec_app_spivot.so: This tool detects stack pivoting.
+	pin -t obj-ia32/sec_app_spivot.so -- <application>
+
+- Output is available on sec_app_spivot.out

@@ -1,0 +1,43 @@
+diff --git a/Login.jsp b/Login.jsp
+index f26c5ed..4c24816 100755
+--- a/Login.jsp
++++ b/Login.jsp
+@@ -1,3 +1,6 @@
++<%@ page import="java.sql.PreparedStatement" %>
++<%@ page import="java.sql.SQLException" %>
++
+ <%@ include file="Common.jsp" %><%!
+ //
+ //   Filename: Login.jsp
+@@ -81,11 +84,22 @@ if ( conn != null ) conn.close();
+       switch (iAction) {
+         case iloginAction: {
+           // Login action
+-         
+           String sLogin = getParam( request, "Login");
+           String sPassword = getParam( request, "Password");
+           java.sql.ResultSet rs = null;
+-          rs = openrs( stat, "select member_id, member_level from members where member_login =" + toSQL(sLogin, adText) + " and member_password=" + toSQL(sPassword, adText));
++     
++          try {
++             PreparedStatement prep_stmt = conn.prepareStatement("select member_id, member_level from members where member_login =? and  member_password=?");
++             prep_stmt.setString(1, sLogin);
++             prep_stmt.setString(2, sPassword);
++	     //java.sql.ResultSet prep_rs = prep_stmt.executeQuery();
++             rs = prep_stmt.executeQuery();
++          }
++	 catch  ( java.sql.SQLException ignore ) {
++                  response.sendRedirect(sPage + "?" + sQueryString);
++		  return "sendRedirect";
++	}
++          //rs = openrs( stat, "select member_id, member_level from members where member_login =" + toSQL(sLogin, adText) + " and member_password=" + toSQL(sPassword, adText));
+           
+           if ( rs.next() ) {
+             // Login and password passed
+@@ -171,4 +185,4 @@ if ( conn != null ) conn.close();
+     }
+     catch (Exception e) { out.println(e.toString()); }
+   }
+-%>
+\ No newline at end of file
++%>

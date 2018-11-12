@@ -1,0 +1,26 @@
+06:48:22.644436 IP localhost.34900 > localhost.http-alt: Flags [P.], seq 3876565621:3876566218, ack 3553851123, win 342, options [nop,nop,TS val 13880091 ecr 13880091], length 597
+E...yq@.@............T.....u..v....V.~.....
+........GET /bookstore/MyInfo.jsp?member_password=abcdef&name=user&last_name=user&email=user%40localhost&address=&phone=&notes=&card_type_id=&card_number=&FormName=Form&FormAction=update&member_id=4&PK_member_id=4 HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://127.0.0.1:8080/bookstore/MyInfo.jsp?
+Cookie: JSESSIONID=E85F99D456A0EC9C515F57D658BAF447
+Connection: keep-alive
+
+
+06:48:22.698915 IP localhost.34900 > localhost.http-alt: Flags [P.], seq 597:1020, ack 178, win 350, options [nop,nop,TS val 13880105 ecr 13880094], length 423
+E...ys@.@............T........w....^.......
+...)....GET /bookstore/ShoppingCart.jsp HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://127.0.0.1:8080/bookstore/MyInfo.jsp?
+Cookie: JSESSIONID=E85F99D456A0EC9C515F57D658BAF447
+Connection: keep-alive
+
+
