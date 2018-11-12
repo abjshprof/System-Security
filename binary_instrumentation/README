@@ -1,5 +1,12 @@
-Implemented: 
-All except shadow stack
+Implements:
+   - a Pintool for counting the number of basic blocks executed by a program.
+   - a Pintool for wrapping calls to malloc. In the wrapper, implement code to keep track of the number of calls made to malloc and the total amount of memory allocated.
+   - a Pintool to count (a) the number of direct control flow transfer instructions executed by a program, and 
+                        (b) the number of indirect control flow transfers executed by a program. 
+	
+   - Pintool as Stack Use Analyzer(Pintool that measures the maximum stack used by a program)
+   - Pintool for Detecting Stack Pivoting
+
 
 Prerequisites:
 I have tested my setup on VM supplied in assignment 1 with 32-bit Linux.
